@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom";
 import { Sidebar } from './components/Sidebar'
 import { MenuIcon } from "@heroicons/react/outline";
+import { Instructions } from "./views/Instructions";
+
+
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -28,6 +31,9 @@ function App() {
             <MenuIcon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
+        <Routes>
+          <Route path="/" element={<Instructions />} />
+        </Routes>
       </div>
     </Router>
   );
